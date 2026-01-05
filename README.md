@@ -15,20 +15,22 @@ Local Buddy connects households with trusted students and youth for errands and 
 
 The website includes:
 
-1. **Hero Section**: Main download CTA with app preview
-2. **Features Section**: Highlighting why users should choose the app
-3. **Installation Guide**: Step-by-step instructions for installing the APK
-4. **Support Section**: Help and FAQ access
-5. **Responsive Design**: Mobile-first design that works on all devices
-6. **Dark Mode**: Automatic dark mode support
+1. **Hero Section**: Main download CTA with app preview and smooth animations
+2. **Features Section**: Highlighting why users should choose the app with animated cards
+3. **Income Calculator**: Interactive slider to calculate earnings (₹400/hour base rate)
+4. **Installation Guide**: Step-by-step instructions for installing the APK
+5. **Support Section**: Help and FAQ access
+6. **Responsive Design**: Mobile-first design that works on all devices
+7. **Dark Mode**: Automatic dark mode support
+8. **Advanced Animations**: High-level animations throughout including slide-in, fade, bounce, and shimmer effects
 
 ## Download Links
 
 The APK download is hosted on MediaFire:
 - **Direct Download**: [LocalBuddy.apk](https://www.mediafire.com/file/zmafddx601he5j0/LocalBuddy.apk/file?dkey=c5yye4rqp1y&r=1899)
-- **File Size**: 45.2 MB
+- **File Size**: 20 MB
 - **Required Android Version**: 8.0+
-- **Current Version**: v2.4.1
+- **Current Version**: v1.0.0
 
 ## Installation Instructions
 

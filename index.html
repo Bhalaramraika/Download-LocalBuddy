@@ -46,15 +46,100 @@
             0% { opacity: 0; transform: translateY(20px) scale(0.95); }
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
+        @keyframes slide-in-left {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slide-in-right {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes bounce-in {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
         .animate-slide-up {
             animation: slide-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
         }
+        .animate-slide-in-left {
+            animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .animate-slide-in-right {
+            animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in forwards;
+            opacity: 0;
+        }
+        .animate-bounce-in {
+            animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
         .delay-700 { animation-delay: 700ms; }
+        .delay-800 { animation-delay: 800ms; }
+        .delay-900 { animation-delay: 900ms; }
         .bg-grid-pattern {
             background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
             background-size: 24px 24px;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        /* Income Calculator Styles */
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #3B82F6, #2563EB);
+            outline: none;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 3px solid #3B82F6;
+        }
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 3px solid #3B82F6;
         }
     </style>
 </head>
@@ -84,21 +169,21 @@
                 <div class="layout-container px-4 md:px-10 lg:px-40">
                     <div class="flex flex-col-reverse gap-16 lg:flex-row lg:items-center lg:justify-between">
                         <div class="flex flex-1 flex-col gap-8 lg:max-w-[580px] relative z-10">
-                            <div class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 border border-blue-100 px-4 py-1.5 text-xs font-bold text-primary dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-300 shadow-sm">
+                            <div class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 border border-blue-100 px-4 py-1.5 text-xs font-bold text-primary dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-300 shadow-sm animate-bounce-in">
                                 <span class="relative flex h-2 w-2">
                                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                     <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                                 </span>
-                                <span>Latest Version v2.4.1 Available</span>
+                                <span>Latest Version v1.0.0 Available</span>
                             </div>
-                            <h1 class="text-4xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-7xl">
+                            <h1 class="text-4xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-7xl animate-slide-in-left delay-100">
                                 Your Local Helper.<br/>
                                 <span class="bg-gradient-to-r from-primary via-blue-500 to-indigo-500 bg-clip-text text-transparent">Directly to Android.</span>
                             </h1>
-                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl">
+                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl animate-slide-in-left delay-200">
                                 Connect with trusted students and youth for errands and daily tasks. Download the <strong>Local Buddy app</strong> directly to enjoy exclusive features and instant updates without the app store wait.
                             </p>
-                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 pt-4">
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 pt-4 animate-slide-in-left delay-300">
                                 <a class="group relative flex h-[5.5rem] w-full sm:w-auto items-center gap-5 rounded-2xl bg-primary px-8 pr-10 text-white shadow-xl shadow-blue-500/30 hover:bg-blue-600 hover:shadow-blue-600/40 hover:-translate-y-1 transition-all duration-300" href="https://www.mediafire.com/file/zmafddx601he5j0/LocalBuddy.apk/file?dkey=c5yye4rqp1y&r=1899" target="_blank" rel="noopener noreferrer">
                                     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 group-hover:bg-white/30 transition-colors backdrop-blur-sm">
                                         <span class="material-symbols-outlined text-3xl">download</span>
@@ -118,7 +203,7 @@
                                         <span>Verified Safe &amp; Signed</span>
                                     </div>
                                     <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-                                        <span>45.2 MB</span>
+                                        <span>20 MB</span>
                                         <span class="text-slate-300 dark:text-slate-600">•</span>
                                         <span>Android 8.0+</span>
                                     </div>
@@ -127,7 +212,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-4 pt-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center gap-4 pt-6 text-sm font-medium text-slate-500 dark:text-slate-400 animate-fade-in delay-400">
                                 <div class="flex -space-x-3">
                                     <div class="h-10 w-10 rounded-full border-[3px] border-background-light dark:border-background-dark bg-gray-300 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMSXimaepkDiOtrqDT48R1SZZPx4oo0Qz2hqWuTgaAgEAXK_SapnA2aJTH8HiGf8Bz6A2cMar8sImZPOSKHdQIny5hexhuM5M4lM3FwyXIhP06_84IKun0hf1lp-zOND73vIMx75n2sWH_QtIunaX-FKksHPZ20LL4LJwalV5SDNtacRi4mBeF1VYIk-nspYwvjtMaMt9agH5-LGSW3vD0RO2dflNCT7-zFq2N_0lD26S81BG_Ajj4TcK8QjJzmJLjPHKfgWXaCU');"></div>
                                     <div class="h-10 w-10 rounded-full border-[3px] border-background-light dark:border-background-dark bg-gray-300 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEShX4R4ZQeygiOJ2dgsLLeWaw1ngszc5fEDk7WBmFUR3lZXpv4H-eQ01_K5yLnPv1zrduAurgmjtidJbQMa2BbjRBnaa3oIL8CLw_yYkYCdkPH6wj0NlV6eXF6608r8nMJuY0b_m8WanxSvNYzo83VZ8bQbsmagQdBef9eSGJzCnmZOWDDtSCmCOa9my4mYLZAaZhYiQNZzSxxe6-779NJf3YRoxA4BKlyEq9-o6UoRca5mikInXf2LJGXrIxSLFdJBCyo73is4o');"></div>
@@ -197,7 +282,7 @@
                         </p>
                     </div>
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300">
+                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300 animate-slide-up delay-100">
                             <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined text-3xl">rocket_launch</span>
                             </div>
@@ -208,7 +293,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300">
+                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300 animate-slide-up delay-300">
                             <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100 text-primary dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined text-3xl">security</span>
                             </div>
@@ -219,7 +304,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300">
+                        <div class="group flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 dark:border-slate-800 dark:bg-card-dark dark:hover:bg-card-dark dark:hover:shadow-black/20 transition-all duration-300 animate-slide-up delay-500">
                             <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined text-3xl">stadia_controller</span>
                             </div>
@@ -228,6 +313,92 @@
                                 <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                                     Earn Karma Points for every service. The app version includes exclusive animations and reward tracking not found on web.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Income Calculator Section -->
+            <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+                <div class="layout-container px-4 md:px-10 lg:px-40">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12 animate-fade-in">
+                            <h2 class="text-3xl font-black leading-tight tracking-tight text-slate-900 dark:text-white md:text-4xl mb-4">
+                                Calculate Your Earnings
+                            </h2>
+                            <p class="text-base text-slate-600 dark:text-slate-400">
+                                See how much you can earn as a Local Buddy helper. Flexible hours, fair pay.
+                            </p>
+                        </div>
+                        <div class="bg-white dark:bg-card-dark rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-200 dark:border-slate-700 animate-bounce-in delay-200">
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center mb-4">
+                                    <label class="text-lg font-bold text-slate-900 dark:text-white">Working Hours</label>
+                                    <div class="flex items-center gap-2">
+                                        <span id="hours-display" class="text-3xl font-black bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">1</span>
+                                        <span class="text-lg font-semibold text-slate-600 dark:text-slate-400">hour(s)</span>
+                                    </div>
+                                </div>
+                                <input type="range" id="hours-slider" class="slider" min="1" max="12" value="1" step="1">
+                                <div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-2">
+                                    <span>1 hour</span>
+                                    <span>6 hours</span>
+                                    <span>12 hours</span>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-r from-primary to-blue-600 rounded-2xl p-8 text-white relative overflow-hidden">
+                                <div class="absolute inset-0 shimmer"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
+                                                <span class="material-symbols-outlined text-3xl">payments</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm opacity-90 font-medium">Your Estimated Earnings</p>
+                                                <p class="text-xs opacity-75">Per day calculation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-5xl md:text-6xl font-black" id="earnings-display">₹400</span>
+                                        <span class="text-2xl opacity-90">/day</span>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-xs opacity-75 mb-1">Weekly</p>
+                                            <p class="text-xl font-bold" id="weekly-display">₹2,800</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs opacity-75 mb-1">Monthly</p>
+                                            <p class="text-xl font-bold" id="monthly-display">₹12,000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="flex items-center gap-3 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800">
+                                    <span class="material-symbols-outlined text-green-600 dark:text-green-400">check_circle</span>
+                                    <div>
+                                        <p class="text-xs text-slate-600 dark:text-slate-400">Rate</p>
+                                        <p class="font-bold text-slate-900 dark:text-white">₹400/hour</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800">
+                                    <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">schedule</span>
+                                    <div>
+                                        <p class="text-xs text-slate-600 dark:text-slate-400">Flexibility</p>
+                                        <p class="font-bold text-slate-900 dark:text-white">Choose Hours</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800">
+                                    <span class="material-symbols-outlined text-purple-600 dark:text-purple-400">trending_up</span>
+                                    <div>
+                                        <p class="text-xs text-slate-600 dark:text-slate-400">Bonuses</p>
+                                        <p class="font-bold text-slate-900 dark:text-white">Extra Rewards</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -403,6 +574,54 @@
             link.addEventListener('click', function() {
                 console.log('Download initiated');
                 // You can add analytics tracking here
+            });
+        });
+
+        // Income Calculator
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoursSlider = document.getElementById('hours-slider');
+            const hoursDisplay = document.getElementById('hours-display');
+            const earningsDisplay = document.getElementById('earnings-display');
+            const weeklyDisplay = document.getElementById('weekly-display');
+            const monthlyDisplay = document.getElementById('monthly-display');
+            
+            const ratePerHour = 400; // ₹400 per hour
+            
+            function updateCalculator() {
+                const hours = parseInt(hoursSlider.value);
+                const dailyEarnings = hours * ratePerHour;
+                const weeklyEarnings = dailyEarnings * 7;
+                const monthlyEarnings = dailyEarnings * 30;
+                
+                hoursDisplay.textContent = hours;
+                earningsDisplay.textContent = `₹${dailyEarnings.toLocaleString('en-IN')}`;
+                weeklyDisplay.textContent = `₹${weeklyEarnings.toLocaleString('en-IN')}`;
+                monthlyDisplay.textContent = `₹${monthlyEarnings.toLocaleString('en-IN')}`;
+            }
+            
+            if (hoursSlider) {
+                hoursSlider.addEventListener('input', updateCalculator);
+                updateCalculator(); // Initial calculation
+            }
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-bounce-in, .animate-slide-in-left, .animate-slide-in-right').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
