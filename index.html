@@ -588,7 +588,7 @@
             const ratePerHour = 400; // ₹400 per hour
             
             function updateCalculator() {
-                const hours = parseInt(hoursSlider.value);
+                const hours = parseInt(hoursSlider.value, 10);
                 const dailyEarnings = hours * ratePerHour;
                 const weeklyEarnings = dailyEarnings * 7;
                 const monthlyEarnings = dailyEarnings * 30;
